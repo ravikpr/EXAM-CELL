@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Generate_Duty</servlet-name>
+        <servlet-class>Generate_Duty_old</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update_Faculty</servlet-name>
+        <servlet-class>Update_Faculty</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Generate_Duty</servlet-name>
+        <url-pattern>/Generate_Duty</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update_Faculty</servlet-name>
+        <url-pattern>/Update_Faculty</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

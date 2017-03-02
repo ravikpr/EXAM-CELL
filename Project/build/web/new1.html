@@ -1,0 +1,206 @@
+<html><head>
+<meta charset="utf-8">
+<title>CSS3 &amp; jQuery Based Off-canvas Navigation Demo</title>
+<style class="cp-pen-styles">
+* {
+  font-family: courier;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  background-color: floralwhite;
+}
+
+.menu {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  background-color: seagreen;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  left: 0;
+  z-index: 50;
+  overflow-y: auto;
+  padding-bottom: 100px;
+}
+
+.menu.closed { left: -250px; }
+
+#toggle {
+  background-color: seagreen;
+  height: 100%;
+  min-height: 100%;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  z-index: 25;
+  -webkit-transition: all .7s ease;
+  transition: all .7s ease;
+}
+
+#toggle:hover { cursor: pointer; }
+
+#toggle.closed {
+  left: 0px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .3;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.content.closed .text {
+  -webkit-transform: translateX(80px);
+  -ms-transform: translateX(80px);
+  transform: translateX(80px);
+}
+
+.text {
+  width: 60%;
+  margin: auto;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+h1,
+h2 { color: #444; }
+
+p { color: #444; }
+
+p img {
+  float: left;
+  margin: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 85px 0 0 40px;
+  padding-right: 40px;
+}
+
+.menu ul li {
+  color: floralwhite;
+  font-size: 20px;
+  margin: 0 0 5px 0;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.menu ul li:hover {
+  background-color: #3bb16f;
+  cursor: pointer;
+}
+
+#wrapper {
+  height: 100%;
+  min-height: 100%;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#wrapper.closed { position: fixed; }
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: seagreen;
+  position: relative;
+  width: 90%;
+  margin-left: 0;
+}
+
+hr:before {
+  content: "/";
+  display: block;
+  top: -8px;
+  left: -5px;
+  position: absolute;
+  color: seagreen;
+}
+ *::-moz-selection {
+ background-color: #1b5233;
+ color: floralwhite;
+}
+
+*::selection {
+  background-color: #1b5233;
+  color: floralwhite;
+}
+</style>
+</head>
+
+<body>
+<div id="toggle"> </div>
+<div class="menu closed">
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+    <li>Blog</li>
+    <li>Share</li>
+  </ul>
+</div>
+<div id="wrapper">
+  <div class="content">
+    <div class="text">
+      <h1>CSS3 &amp; jQuery Based Off-canvas Navigation Demo</h1>
+  
+      <hr>
+    </div>
+  </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script>
+$( "#toggle" ).click(function() {
+  $(".menu").toggleClass("closed");
+  $(this).toggleClass("closed");
+  $(".content").toggleClass("closed");
+  $("#wrapper").toggleClass("closed")
+});
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</body></html>
